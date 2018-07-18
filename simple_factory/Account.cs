@@ -1,11 +1,11 @@
 namespace simple_factory
 {
-    public abstract class BankAccount
+    public abstract class Account
     {
         public abstract float getRate();
     }
 
-    public class SavingAccount : BankAccount
+    public class SavingAccount : Account
     {
         private float rate = 4.0f;
         public override float getRate()
@@ -14,7 +14,7 @@ namespace simple_factory
         }
     }
 
-    public class CurrentAccount: BankAccount
+    public class CurrentAccount: Account
     {
         private float rate = 1.0f;
 
@@ -24,7 +24,7 @@ namespace simple_factory
         }
     }
 
-    public class FixedAccount: BankAccount
+    public class FixedAccount: Account
     {
         private float rate = 10.0f;
 

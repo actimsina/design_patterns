@@ -6,13 +6,16 @@ namespace simple_factory
     {
         static void Main(string[] args)
         {
-            BankAccount b1 = new SavingAccount();
+            Account b1 = new SavingAccount();
             Console.WriteLine(b1.getRate());
 
-            BankAccount b2 = AccountFactory.createAccount("fixed");
-            Console.WriteLine(b2.getRate());
-
-            BankAccount b3  = AccountFactory.createAccount("saving");
+            Account a1;
+            try {
+               a1 = AccountFactory.createAccount("saving");
+               Console.WriteLine(a1.getRate());
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

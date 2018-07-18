@@ -2,24 +2,18 @@ namespace simple_factory
 {
     public class AccountFactory
     {
-        public static BankAccount createAccount(string type) 
+        public static Account createAccount(string type) 
         {
-            BankAccount account;
             switch(type){
                 case "saving":
-                    account = new SavingAccount();
-                    break;
+                   return new SavingAccount();
                 case "current":
-                    account = new CurrentAccount();
-                    break;
+                    return new CurrentAccount();
                 case "fixed":
-                    account =  new FixedAccount();
-                    break;
+                    return new FixedAccount();
                 default:
-                    account = null;
-                    break;
+                    throw new System.Exception();
             }
-            return account;
         }
     }
 }
