@@ -6,8 +6,11 @@ namespace abstract_factory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
+            Bank b2 = BankFactory.getBank("investment");
+            IAccount a2 = b2.openAccount("fixed");
+
+            Console.WriteLine(a2.getRate());
         
         }
     }
