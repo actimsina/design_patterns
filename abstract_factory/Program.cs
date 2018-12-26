@@ -2,16 +2,22 @@
 
 namespace abstract_factory
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
+      try
+      {
+        Bank b2 = BankFactory.getBank("investment");
+        IAccount a2 = b2.openAccount("fixeded");
+        Console.WriteLine(a2.getRate());
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e.Message);
+      }
 
-            Bank b2 = BankFactory.getBank("investment");
-            IAccount a2 = b2.openAccount("fixed");
 
-            Console.WriteLine(a2.getRate());
-        
-        }
     }
+  }
 }
